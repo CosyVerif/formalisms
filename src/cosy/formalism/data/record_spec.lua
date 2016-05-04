@@ -46,7 +46,7 @@ describe ("Formalism data.record", function ()
     layer [Layer.key.refines] = { record }
     layer [Layer.key.meta   ] = {
       [record] = {
-        key = { value_type = "string" },
+        key = { value_type = "boolean" },
       },
     }
     layer.key = 1
@@ -64,6 +64,21 @@ describe ("Formalism data.record", function ()
       },
     }
     layer.key = "value"
+    Layer.Proxy.check (layer)
+    assert.is_nil (Layer.messages (layer) ())
+  end)
+
+
+  it ("detects correctly typed key/value (primitive)", function ()
+    local record = Layer.require "cosy/formalism/data.record"
+    local layer  = Layer.new {}
+    layer [Layer.key.refines] = { record }
+    layer [Layer.key.meta   ] = {
+      [record] = {
+        key = { value_type = "string",},
+      },
+    }
+    layer.key = "ok"
     Layer.Proxy.check (layer)
     assert.is_nil (Layer.messages (layer) ())
   end)
