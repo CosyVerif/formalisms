@@ -6,6 +6,7 @@ build:
         code: |
           for dir in /lua/*; do
             if [ -d "${dir}" ]; then
+              "${dir}/bin/luarocks" install compat52 || true
               "${dir}/bin/luarocks" make rockspec/cosy-formalisms-env-master-1.rockspec
               "${dir}/bin/luarocks" make rockspec/cosy-formalisms-master-1.rockspec
             fi
