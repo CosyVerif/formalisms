@@ -30,7 +30,7 @@ build:
           luacov-coveralls \
             --repo-token "${COVERALLS_TOKEN}" \
             --exclude share --exclude busted --exclude _spec \
-            --include layeredata \
+            --include cosy \
             --root src/ \
             --service-name "${WERCKER_GIT_BRANCH}"
     - script:
@@ -46,10 +46,10 @@ build:
           cd rockspec || exit 1
           sed -e "s/master-1/${tag}-${count}/" \
               -e "s/master/${tag}/" \
-            "layeredata-master-1.rockspec" \
-            > "layeredata-${tag}-${count}.rockspec"
+            "cosy-formalisms-master-1.rockspec" \
+            > "cosy-formalisms-${tag}-${count}.rockspec"
           luarocks upload \
             --force \
             --api-key="${LUAROCKS_TOKEN}" \
-            "layeredata-${tag}-${count}.rockspec"
+            "cosy-formalisms-${tag}-${count}.rockspec"
           cd ..
