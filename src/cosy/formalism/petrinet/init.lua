@@ -14,13 +14,9 @@ return function (Layer, petrinet, ref)
 
   local collection       = Layer.require "cosy/formalism/data.collection"
   local record           = Layer.require "cosy/formalism/data.record"
-  local graph            = Layer.require "cosy/formalism/graph"
   local directed         = Layer.require "cosy/formalism/graph.directed"
-  local binary_edges     = Layer.require "cosy/formalism/graph.binary_edges"
 
   petrinet [refines] = {
-    graph,
-    binary_edges,
     directed,
   }
 
