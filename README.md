@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/CosyVerif/formalisms.svg?branch=master)](https://travis-ci.org/CosyVerif/formalisms)
+[![Build status](https://app.wercker.com/status/7a815747245a5c7a926b1c3af158a588/s/master "wercker status")](https://app.wercker.com/project/byKey/7a815747245a5c7a926b1c3af158a588)
 [![Coverage Status](https://coveralls.io/repos/CosyVerif/formalisms/badge.svg?branch=master&service=github)](https://coveralls.io/github/CosyVerif/formalisms?branch=master)
-[![Join the chat at https://gitter.im/CosyVerif/formalisms](https://badges.gitter.im/CosyVerif/formalisms.svg)](https://gitter.im/CosyVerif/formalisms?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Chat](https://badges.gitter.im/CosyVerif/formalisms.svg)](https://gitter.im/CosyVerif/formalisms?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Standard Formalisms Library for CosyVerif
 
