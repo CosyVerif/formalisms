@@ -14,7 +14,7 @@ return function (Layer, one_of)
   }
   one_of [meta] = {
     [type] = function (types, proxy)
-      for key, t in pairs (types) do
+      for key, t in Layer.pairs (types) do
         local result = Layer.coroutine.wrap (function ()
           check (proxy, t, {
             proxy  = proxy,
@@ -33,7 +33,7 @@ return function (Layer, one_of)
   one_of [checks] = {}
 
   one_of [checks] [prefix .. ".types"] = function (proxy)
-    for key, t in pairs (proxy) do
+    for key, t in Layer.pairs (proxy) do
       if  type (t) ~= "boolean"
       and type (t) ~= "number"
       and type (t) ~= "string"
