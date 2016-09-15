@@ -173,8 +173,6 @@ describe ("Formalism petrinet", function ()
   describe ("arcs", function ()
 
     it ("can be created", function ()
-      -- local ProFi = require "ProFi"
-		  -- ProFi:start ()
       local Layer      = require "layeredata"
       local petrinet   = Layer.require "cosy/formalism/petrinet"
       local layer, ref = Layer.new {}
@@ -190,15 +188,6 @@ describe ("Formalism petrinet", function ()
       assert.is_true (layer [Layer.key.meta].arc_type <= layer.arcs.ab)
       assert.is_true (layer.arcs.ab [Layer.key.meta].arrow_type <= layer.arcs.ab.arrows.source)
       assert.is_true (layer.arcs.ab [Layer.key.meta].arrow_type <= layer.arcs.ab.arrows.target)
-      -- ProFi:stop ()
-  		-- ProFi:writeReport "report.txt"
-      -- for key, t in pairs (Layer.statistics) do
-      --   for proxy, count in pairs (t) do
-      --     if count > 1 then
-      --       print (key, proxy, count)
-      --     end
-      --   end
-      -- end
     end)
 
     it ("can be seen as edges", function ()
