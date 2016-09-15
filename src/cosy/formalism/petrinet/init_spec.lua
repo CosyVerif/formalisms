@@ -1,7 +1,3 @@
-if #setmetatable ({}, { __len = function () return 1 end }) ~= 1 then
-  require "compat52"
-end
-
 -- These lines are required to correctly run tests.
 require "busted.runner" ()
 
@@ -65,7 +61,7 @@ describe ("Formalism petrinet", function ()
       layer.places.a = {}
       layer.places.b = {}
       local found = {}
-      for k in pairs (layer.places) do
+      for k in Layer.pairs (layer.places) do
         found [k] = true
       end
       assert.are.same (found, {
@@ -82,7 +78,7 @@ describe ("Formalism petrinet", function ()
       layer.places.a = {}
       layer.places.b = {}
       local found = {}
-      for k in pairs (layer.vertices) do
+      for k in Layer.pairs (layer.vertices) do
         found [k] = true
       end
       assert.are.same (found, {
@@ -146,7 +142,7 @@ describe ("Formalism petrinet", function ()
       layer.transitions.a = {}
       layer.transitions.b = {}
       local found = {}
-      for k in pairs (layer.transitions) do
+      for k in Layer.pairs (layer.transitions) do
         found [k] = true
       end
       assert.are.same (found, {
@@ -163,7 +159,7 @@ describe ("Formalism petrinet", function ()
       layer.transitions.a = {}
       layer.transitions.b = {}
       local found = {}
-      for k in pairs (layer.vertices) do
+      for k in Layer.pairs (layer.vertices) do
         found [k] = true
       end
       assert.are.same (found, {
@@ -265,7 +261,7 @@ describe ("Formalism petrinet", function ()
         target = ref.transitions.b,
       }
       local found = {}
-      for k in pairs (layer.arcs) do
+      for k in Layer.pairs (layer.arcs) do
         found [k] = true
       end
       assert.are.same (found, {
@@ -285,7 +281,7 @@ describe ("Formalism petrinet", function ()
         target = ref.transitions.b,
       }
       local found = {}
-      for k in pairs (layer.edges) do
+      for k in Layer.pairs (layer.edges) do
         found [k] = true
       end
       assert.are.same (found, {

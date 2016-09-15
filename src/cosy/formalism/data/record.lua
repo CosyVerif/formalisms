@@ -46,7 +46,7 @@ return function (Layer, record)
     if has_meta (proxy) then
       return
     end
-    for key, description in pairs (proxy [meta][record]) do
+    for key, description in Layer.pairs (proxy [meta][record]) do
       if  getmetatable (description) == Layer.Proxy
       and description.value_type ~= nil then
         if  type (description.value_type) ~= "string"
@@ -71,7 +71,7 @@ return function (Layer, record)
     if has_meta (proxy) then
       return
     end
-    for key, description in pairs (proxy [meta] [record]) do
+    for key, description in Layer.pairs (proxy [meta] [record]) do
       if  getmetatable (description) == Layer.Proxy
       and description.value_container ~= nil then
         if  getmetatable (description.value_container) ~= Layer.Proxy then

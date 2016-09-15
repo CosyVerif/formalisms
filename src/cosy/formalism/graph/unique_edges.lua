@@ -25,9 +25,9 @@ return function (Layer, unique_edges)
   unique_edges.edges [checks] = {
     ["cosy/formalism/graph.unique-edges"] = function (proxy)
       local edges = {}
-      for _, edge in pairs (proxy.edges) do
+      for _, edge in Layer.pairs (proxy.edges) do
         local vertices = {}
-        for _, arrow in pairs (edge.arrows) do
+        for _, arrow in Layer.pairs (edge.arrows) do
           vertices [arrow.vertex] = true
         end
         edges [edge] = vertices

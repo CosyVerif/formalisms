@@ -60,7 +60,7 @@ return function (Layer, collection, ref)
       return
     end
     local size = 0
-    for _ in pairs (proxy) do
+    for _ in Layer.pairs (proxy) do
       size = size+1
     end
     if  (size < (proxy [meta][collection].minimum or  math.huge))
@@ -82,7 +82,7 @@ return function (Layer, collection, ref)
       return
     end
     if type (proxy [meta][collection].key_type) == "string" then
-      for key, _ in pairs (proxy) do
+      for key, _ in Layer.pairs (proxy) do
         check_type (key, proxy [meta][collection].key_type, {
           proxy  = proxy,
           key    = key,
@@ -90,7 +90,7 @@ return function (Layer, collection, ref)
         })
       end
     elseif getmetatable (proxy [meta][collection].key_type) == Layer.Proxy then
-      for key, _ in pairs (proxy) do
+      for key, _ in Layer.pairs (proxy) do
         local resolved = Layer.Reference.resolve (key, proxy)
         check_type (resolved, proxy [meta][collection].key_type, {
           proxy  = proxy,
@@ -115,7 +115,7 @@ return function (Layer, collection, ref)
     end
     if type (proxy [meta][collection].value_type) == "string"
     or getmetatable (proxy [meta][collection].value_type) == Layer.Proxy then
-      for key, value in pairs (proxy) do
+      for key, value in Layer.pairs (proxy) do
         check_type (value, proxy [meta][collection].value_type, {
           proxy  = proxy,
           key    = key,
@@ -137,7 +137,7 @@ return function (Layer, collection, ref)
     if not proxy [meta][collection].key_container then
       return
     end
-    for key, _ in pairs (proxy) do
+    for key, _ in Layer.pairs (proxy) do
       check_container (key, proxy [meta][collection].key_container, {
         proxy  = proxy,
         key    = key,
@@ -153,7 +153,7 @@ return function (Layer, collection, ref)
     if not proxy [meta][collection].value_container then
       return
     end
-    for key, value in pairs (proxy) do
+    for key, value in Layer.pairs (proxy) do
       check_container (value, proxy [meta][collection].value_container, {
         proxy  = proxy,
         key    = key,

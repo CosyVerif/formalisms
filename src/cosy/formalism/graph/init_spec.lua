@@ -1,7 +1,3 @@
-if #setmetatable ({}, { __len = function () return 1 end }) ~= 1 then
-  require "compat52"
-end
-
 -- These lines are required to correctly run tests.
 require "busted.runner" ()
 
@@ -50,7 +46,7 @@ describe ("Formalism graph", function ()
       layer.vertices.a = {}
       layer.vertices.b = {}
       local found = {}
-      for k in pairs (layer.vertices) do
+      for k in Layer.pairs (layer.vertices) do
         found [k] = true
       end
       assert.are.same (found, {
