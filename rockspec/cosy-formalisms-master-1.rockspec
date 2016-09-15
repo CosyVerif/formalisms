@@ -25,7 +25,6 @@ build = {
     ["cosy.formalism.type.check"      ] = "src/cosy/formalism/type/check.lua",
     ["cosy.formalism.type.all_of"     ] = "src/cosy/formalism/type/all_of.lua",
     ["cosy.formalism.type.one_of"     ] = "src/cosy/formalism/type/one_of.lua",
-    ["cosy.formalism.type.constrained"] = "src/cosy/formalism/type/constrained.lua",
 
     ["cosy.formalism.data.check_container"] = "src/cosy/formalism/data/check_container.lua",
     ["cosy.formalism.data.collection"     ] = "src/cosy/formalism/data/collection.lua",
