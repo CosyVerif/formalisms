@@ -276,6 +276,17 @@ example.pre_arcs   .ab = {
   target = ref.transitions.b,
 }
 
+-- Iteration over Petri net arcs:
 for id, arc in Layer.pairs (example.arcs) do
   print (id, arc.source, arc.target)
+end
+
+-- Iteration over graph edges:
+for id, edge in Layer.pairs (example.edges) do
+  print (id, edge.source, edge.target)
+end
+
+-- Iteration over graph vertices:
+for id, vertex in Layer.pairs (example.vertices) do
+  print (id, vertex)
 end
